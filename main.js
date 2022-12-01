@@ -645,6 +645,8 @@ function q5_barchart(month_array, month_count, day_array, day_count, date_Array)
 
 function q6_barchart(day_array, day_count, date_Array) {
     // set up
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
     const margin = {top: 50, right: 50, bottom: 50, left: 50};
     
@@ -724,6 +726,7 @@ function q6_barchart(day_array, day_count, date_Array) {
           .attr("y", ([type, count]) => y(count))
           .attr("opacity", 1)
         .on('mouseover', function (d, i) {
+            const temp = new Date(`${i[0]} ${month} 2022`);
             d3.select(this)
                 .transition()
                 .duration('50')
@@ -731,7 +734,7 @@ function q6_barchart(day_array, day_count, date_Array) {
             tooltip.transition()
                 .duration(50)
                 .style("opacity", 1);
-            tooltip.html(`Total: ${i[1]}`)
+            tooltip.html(`${days[temp.getDay()]}, Total: ${i[1]}`)
                 .style("left", ()=>{return (d.pageX + 10) + "px"})
                 .style("top", (d.pageY - 15) + "px");
         })
