@@ -614,7 +614,7 @@ function q5_barchart(month_array, month_count, day_array, day_count, date_Array)
             tooltip.transition()
                 .duration(50)
                 .style("opacity", 1);
-            tooltip.html(i[1])
+            tooltip.html(`Total: ${i[1]}`)
                 .style("left", ()=>{return (d.pageX + 10) + "px"})
                 .style("top", (d.pageY - 15) + "px");
         })
@@ -691,6 +691,10 @@ function q6_barchart(day_array, day_count, date_Array) {
         .attr("transform", `translate(${margin.left}, ${size.height})`);
       
     let barsGroup = g.append("g");
+
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip-donut")
+        .style("opacity", 0);
   
     function update(month) {
       
@@ -719,8 +723,29 @@ function q6_barchart(day_array, day_count, date_Array) {
           .attr("x", ([type, count]) => x(type)+margin.left)
           .attr("y", ([type, count]) => y(count))
           .attr("opacity", 1)
+        .on('mouseover', function (d, i) {
+            d3.select(this)
+                .transition()
+                .duration('50')
+                .attr('opacity', 1);
+            tooltip.transition()
+                .duration(50)
+                .style("opacity", 1);
+            tooltip.html(`Total: ${i[1]}`)
+                .style("left", ()=>{return (d.pageX + 10) + "px"})
+                .style("top", (d.pageY - 15) + "px");
+        })
+        .on('mouseout', function (d, i) {
+            d3.select(this)
+                .transition()
+                .duration('50')
+                .attr('opacity', 0.75);
+            tooltip.transition()
+                .duration(50)
+                .style("opacity", 0);
+        })
         .transition(t)
-          .attr("height", ([type, count]) => size.height-y(count));
+            .attr("height", ([type, count]) => size.height-y(count));
     }
     
     return Object.assign(svg.node(), { update });

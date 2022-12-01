@@ -100,11 +100,21 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Project 3</h1>
+										<h1>CS 424 Project 3</h1>
+										<h2>Ming Yu Liew</h2>
 									</header>
 
 									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
+									
+									<hr class="major" />
 
+									<h2>Dataset</h2>
+									<p><a href="https://data.cityofchicago.org/Transportation/Traffic-Crashes-Vehicles/68nd-jvt3" target="_blank">Traffic Crashes - Vehicles</a> - Dataset source, March-December 2020</p>
+									<p><a href="https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if" target="_blank">Traffic Crashes - Crashes</a> - Related dataset, March-December 2020</p>
+									<p><a href="https://idot.illinois.gov/Assets/uploads/files/Transportation-System/Manuals-Guides-&-Handbooks/Safety/Illinois%20Traffic%20Crash%20Report%20SR%201050%20Instruction%20Manual%202019.pdf" target="_blank">SR1050 Instruction Manual</a> - Explains what some of the data elements represents</p>
+									<p>This dataset contains about 1.33 million records and 72 attributes (columns) such as crash date, vehicle info(brand, model, year, registration), unit type(bike, self-driving), etc. Each record is a vehicle (referred to as units in the data) that was involved in a traffic crash collected by the Chicago Police Department.</p>
+
+									<hr class="major" />
 
 									<h2>From Project 2</h2>
 
@@ -123,10 +133,14 @@
                                     <p>Instead of just creating a visualization for bicycles, we can use a selector from the visualization for question 1 and show for each unit type.</p>
                                     
                                     <h3>Visualization</h3>
-                                    <select id="selectButton"></select>
-                                    <div style="display: flex">
-                                        <div id="q1_plot"></div>
-                                        <div id="q2_plot"></div>
+									<div class="row">
+										<select id="selectButton"></select>
+										<div class="col-6 col-12-small">
+                                        	<div id="q1_plot"></div>
+										</div>
+										<div class="col-6 col-12-small">
+                                        	<div id="q2_plot"></div>
+										</div>
                                     </div>
 
 									<hr class="major" />
@@ -144,9 +158,13 @@
                                     <p>By linking it with the visualization from question 3, we can see the most common type of injury suffered, especially accidents reported with a higher total injuries.</p>
 
                                     <h3>Visualization</h3>
-                                    <div style="display: flex">
-                                        <div id="q3_plot"></div>
-                                        <div id="q4_plot"></div>
+                                    <div class="row">
+										<div class="col-6 col-12-small">
+                                        	<div id="q3_plot"></div>
+										</div>
+										<div class="col-6 col-12-small">
+                                        	<div id="q4_plot"></div>
+										</div>
                                     </div>
 
 									<hr class="major" />
@@ -168,9 +186,13 @@
                                     <p>The motivation is the same as the previous question but we look more into the details by checking the distribution per day over a whole month</p>
 
                                     <h3>Visualization</h3>
-                                    <div style="display: flex">
-                                        <div id="q5_plot"></div>
-                                        <div id="q6_plot"></div>
+                                    <div class="row">
+										<div class="col-6 col-12-small">
+                                        	<div id="q5_plot"></div>
+										</div>
+										<div class="col-6 col-12-small">
+                                        	<div id="q6_plot"></div>
+										</div>
                                     </div>
 
                                     <hr class="major" />
@@ -180,9 +202,7 @@
                                     <hr class="major" />
                                     <p>The map below is made using Leaflet and the map tile is from OpenStreetMap</p>
 
-                                    <div style="display: flex">
-                                        <div id="map"></div>
-                                    </div>
+                                    <div id="map"></div>
 
 								</section>
 
