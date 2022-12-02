@@ -629,6 +629,7 @@ function q5_barchart(month_array, month_count, day_array, date_Array) {
             .attr("height", ([month, count]) => size.height-y(count))
             .attr("x", ([month, count]) => x(month)+margin.left)
             .attr("y", ([month, count]) => y(count))
+            .attr("plot", "q5")
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .transition()
@@ -652,6 +653,9 @@ function q5_barchart(month_array, month_count, day_array, date_Array) {
         })
         .on('click', function (d, i) {
             d3.selectAll('rect')
+            .filter(function() {
+                return d3.select(this).attr("plot") == "q5";
+            })
                 .transition()
                 .duration('50')
                 .attr("selected", false)
@@ -766,7 +770,7 @@ function q6_barchart(day_array, date_Array) {
             d3.select(this)
                 .transition()
                 .duration('50')
-                .attr('opacity', 1);
+                .attr('opacity', 0.75);
             tooltip.transition()
                 .duration(50)
                 .style("opacity", 1);
@@ -778,7 +782,7 @@ function q6_barchart(day_array, date_Array) {
             d3.select(this)
                 .transition()
                 .duration('50')
-                .attr('opacity', 0.75);
+                .attr('opacity', 1);
             tooltip.transition()
                 .duration(50)
                 .style("opacity", 0);
