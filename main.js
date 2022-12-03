@@ -869,7 +869,7 @@ function q5_q6_linked(raw_crashes_vehicles) {
 
 function createMap(crashes_points) {
 
-    var map = L.map('map').setView([41.9, -87.7], 11);
+    var map = L.map('map').setView([41.87, -87.7], 11);
 
     var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
