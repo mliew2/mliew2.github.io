@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project 1: Around the World</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="http://html5up.net">Alpha</a> by HTML5 UP</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Projects</a>
+								<ul>
+									<li><a href="project-1.html">Project 1</a></li>
+									<li><a href="project-2.html">Project 2</a></li>
+									<li><a href="project-3.html">Project 3</a></li>
+									<li><a href="students-choice.html">Student's Choice</a></li>
+								</ul>
+							</li>
+							<!--
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Layouts</a>
+								<ul>
+									<li><a href="generic.html">Generic</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option One</a></li>
+											<li><a href="#">Option Two</a></li>
+											<li><a href="#">Option Three</a></li>
+											<li><a href="#">Option Four</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button">Sign Up</a></li>
+							-->
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Around the World</h2>
+						<p>Project 1</p>
+					</header>
+					
+					<div class="box">
+						
+						<span class="image fit" style="display: flex; align-content: center; justify-content: center; align-items: center;"><img src="images/Project-1.png" alt="" style="max-width: 50%;"/></span>
+
+						<h3>Introduction</h3>
+						<p>
+							The focus of Project 1 is to create AR knickkncacks to represent different places in the world which feature the models of the attractions, the name, the local time, and the current weather.
+							The purpose of the project is to use the small cubes as a placeholder and recreate these places virtually, serving as a souvenir.
+							The attractions featured here are the Petronas Twin Towers in Kuala Lumpur, Malaysia and the London Eye in London, United Kingdom.
+						</p>
+						
+						<h3>Video</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/eqjAzfkRlUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<p></p>
+
+						<h3>How to install the project</h3>
+						<a href="https://github.com/mliew2/428-Project-1" class="button special small" target="__blank">
+							<i class="icon brands fa-github"></i>
+							Project Link
+						</a>
+						<ol>
+							<li>Download the project from the link</li>
+							<li>Sign up and download <a href="https://unity.com/" target="__blank">Unity Hub</a></li>
+							<li>
+								On Unity Hub, go to install and click "Install Editor"<br>
+								Select version 2021.3.6f1. If it is not there, select "Archive" and download it from the Unity download archive.
+							</li>
+							<li>Register for a <a href="https://developer.vuforia.com/" target="__blank">Vuforia</a> account</li>
+							<li>
+								Once you have registered, go to <a href="https://developer.vuforia.com/downloads" target="blank">Downloads</a> on the Vuforia website and download Vuforia Engine 10.9.<br>
+								(The website will list the newest version available, so any version after 10.9 should work.)
+							</li>
+							<li>
+								After downloading, go to <a href="https://developer.vuforia.com/license-manager" target="__blank">Develop</a> and select "Get Basic" to get a free license key.
+							</li>
+							<li>Go back to Unity Hub, click open and select the folder containing the project.</li>
+							<li>
+								Once the project is open, select "Assets" from the top menu.<br>
+								Under Assets click "Import Package" and "Custom Package...", then select the Vuforia unity package file you downloaded.<br>
+								(More detailed guide <a href="https://library.vuforia.com/getting-started/getting-started-vuforia-engine-unity" target="__blank">here</a>)
+							</li>
+							<li>
+								Select "Window" from the top menu and you should be able to select the "Vuforia Configuration" option<br>
+								(You can also use Ctrl+Shift+V on Windows to bring it up)<br>
+								Copy your license key from the Vuforia website and paste it in the "App License Key" section.
+							</li>
+							<li>
+								Download the <a href="https://www.evl.uic.edu/aej/428/CubesForVuforia.zip">cubes</a>, print them out and create it.
+							</li>
+							<li>Now, you should be able to run the project by clicking the <i class="fa fa-play"></i> button on the top and placing the cubes in front of your webcam.</li>
+						</ol>
+						
+						<h3>Knickknack</h3>
+						<div class="row">
+							<div class="col-6 col-12-mobilep">
+								<img src="images/Project-1/Kuala-Lumpur.png" alt="" style="max-width: 400px; max-height: 400px;"/>
+								<h4>Kuala Lumpur</h4>
+								<ul>
+									<li>The Petronas Twin Towers are the tallest twin skyscrapers in the world (as of September 2022).</li>
+									<li>
+										The Menara Kuala Lumpur, aka KL Tower, is another attraction in Kuala Lumpur, 
+										but I included it as these two attractions are the most iconic attractions there 
+										that they are almost always seen as a pair.
+									</li>
+									<li>The nasi lemak is a traditional Malaysian cuisine that is very cheap and delicious.</li>
+									<li>
+										The reason I included the Malaysian flag was because when I was working on this project, early September, 
+										Malaysia celebrated Merdeka, its independence day, which is on 31st August and Malaysia Day, which is on
+										16th September.
+									</li>
+									<li>
+										I included the street lamp purely out of nostalgia. Back in Malaysia, the road near my house would have a 
+										lot of street lamps like this but most of the time they would not be working. Originally, I was going to 
+										include a beam to represent the light from the street lamp, but I decided it was more accurate to not include them.
+									</li>
+									<li>
+										The reason I chose the wind blowing sound is because it is particularly windy in Malaysia around this time of the year. 
+										The monsoon season there is from late May to September.
+									</li>
+								</ul>
+							</div>
+							<div class="col-6 col-12-mobilep">
+								<img src="images/Project-1/London.png" alt="" style="max-width: 400px; max-height: 400px;"/>
+								<h4>London</h4>
+								<ul>
+									<li>The London Eye is a observational wheel that provides a great view of London.</li>
+									<li>
+										While the Big Ben is an attraction on its own, it is one of the most prominent building you can see 
+										from the London Eye.
+									</li>
+									<li>Personally, the phone booth is one of the most iconic things I saw when I was in London.</li>
+									<li>The Tube sign represents the London tube, which was the main way we got around when I was there.</li>
+									<li>The tea cup is just to signify the good tea I had there.</li>
+									<li>The reason I chose the bell ringing sound is to represent the bell in the Big Ben that rings every hour</li>
+								</ul>
+							</div>
+						</div>
+
+						<h3>Models created</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Image</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Malaysian Flag</td>
+									<td><span class="image"><img src="images/Project-1/Malaysia-Flag.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+								</tr>
+								<tr>
+									<td>Malaysian Street Lamp</td>
+									<td><span class="image"><img src="images/Project-1/Streetlamp.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+								</tr>
+								<tr>
+									<td>Tea Cup</td>
+									<td><span class="image"><img src="images/Project-1/Teacup.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+								</tr>
+								<tr>
+									<td>Tube Sign</td>
+									<td><span class="image"><img src="images/Project-1/Tube-Sign.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<h3>Assets</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Source link</th>
+										<th>Image</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Models</td>
+									</tr>
+									<tr>
+										<td>Menara KL Tower<br>by cvv000</td>
+										<td>
+											<a href="https://www.turbosquid.com/3d-models/menara-tower-max-free/891797" target="__blank">
+												https://www.turbosquid.com/3d-models/<br>menara-tower-max-free/891797
+											</a>
+										</td>
+										<td><span class="image"><img src="images/Project-1/Menarar-KL.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+									</tr>
+									<tr>
+										<td>3D Petronas Towers Low poly<br>by namk07a3</td>
+										<td>
+											<a href="https://www.turbosquid.com/3d-models/3d-petronas-towers-1210664" target="__blank">
+												https://www.turbosquid.com/3d-models/<br>3d-petronas-towers-1210664
+											</a>
+										</td>
+										<td><span class="image"><img src="images/Project-1/Petronas-Twin-Towers.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+									</tr>
+									<tr>
+										<td>Nasi Lemak<br>by Janessa Jia Yun</td>
+										<td>
+											<a href="https://sketchfab.com/3d-models/nasi-lemak-a1195492c00b4e33b151fd7f91add84d" target="__blank">
+												https://sketchfab.com/3d-models/<br>nasi-lemak-a1195492c00b4e33b151fd7f91add84d
+											</a>
+										</td>
+										<td><span class="image"><img src="images/Project-1/Nasi-Lemak.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+									</tr>
+									<tr>
+										<td>London Eye<br>by Antonio Rodriguez</td>
+										<td>
+											<a href="https://sketchfab.com/3d-models/london-eye-5c1c07d9bf894fa4b05769bf73b596d3" target="__blank">
+												https://sketchfab.com/3d-models/<br>london-eye-5c1c07d9bf894fa4b05769bf73b596d3
+											</a>
+										</td>
+										<td><span class="image"><img src="images/Project-1/London-Eye.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+									</tr>
+									<tr>
+										<td>Big Ben<br>by Julian Toquica</td>
+										<td>
+											<a href="https://sketchfab.com/3d-models/big-ben-b5f82ba2e3614be2a69755a2a613579a" target="__blank">
+												https://sketchfab.com/3d-models/<br>big-ben-b5f82ba2e3614be2a69755a2a613579a
+											</a>
+										</td>
+										<td><span class="image"><img src="images/Project-1/Big-Ben.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+									</tr>
+									<tr>
+										<td>London Phone Booth<br>by alban</td>
+										<td>
+											<a href="https://sketchfab.com/3d-models/london-phone-booth-0c21f6ac8d44452197751910527c3b0f" target="__blank">
+												https://sketchfab.com/3d-models/<br>london-phone-booth-0c21f6ac8d44452197751910527c3b0f
+											</a>
+										</td>
+										<td><span class="image"><img src="images/Project-1/Phone-Booth.png" alt="" style="max-width: 200px; max-height: 200px;"/></span></td>
+									</tr>
+									<tr>
+										<td>Sounds</td>
+									</tr>
+									<tr>
+										<td>Autumn wind and dry leaves.wav<br>by Stek59</td>
+										<td>
+											<a href="https://freesound.org/people/Stek59/sounds/457318/" target="__blank">
+												https://freesound.org/people/<br>Stek59/sounds/457318/
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>Old clock bell<br>by VoxHumanaMusiCurators</td>
+										<td>
+											<a href="https://freesound.org/people/VoxHumanaMusiCurators/sounds/627146/" target="__blank">
+												https://freesound.org/people/<br>VoxHumanaMusiCurators/sounds/627146/
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>Images</td>
+									</tr>
+									<tr>
+										<td>Flag of Malaysia<br>from Wikipedia</td>
+										<td>
+											<a href="https://en.wikipedia.org/wiki/Flag_of_Malaysia#/media/File:Flag_of_Malaysia.svg" target="__blank">
+												https://en.wikipedia.org/wiki/<br>Flag_of_Malaysia#/media/File:Flag_of_Malaysia.svg
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>Visit Malaysia 2020 Logo PNG Vector<br>from seeklogo</td>
+										<td>
+											<a href="https://seeklogo.com/vector-logo/365937/visit-malaysia-2020" target="__blank">
+												https://seeklogo.com/vector-logo/<br>365937/visit-malaysia-2020
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>Flag of the United Kingdom<br>from Wikipedia</td>
+										<td>
+											<a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom#/media/File:Flag_of_the_United_Kingdom.svg" target="__blank">
+												https://en.wikipedia.org/wiki/Flag_of_the_<br>United_Kingdom#/media/File:Flag_of_the_United_Kingdom.svg
+											</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<br>
+
+						<h3>Credits</h3>
+						<ul class="alt">
+							<li>Weather information provided by <a href="https://openweathermap.org/" target="__blank">OpenWeatherMap</a></li>
+							<li>Local time provided by <a href="http://worldtimeapi.org/" target="__blank">World Time API</a></li>
+							<li><a href="https://www.evl.uic.edu/aej/428/Vuforia%20F22.zip">Starter code</a> provided by Professor <a href="https://www.evl.uic.edu/aej/" target="__blank">Andy Johnson</a></li>
+						</ul>
+
+						<h3>AR in the future</h3>
+						<p>
+							In this project, we explore the potential of AR technology to recreate a place and mapping it onto a small cube physically. With how fast this technology is advancing, 
+							it is not impossible to see these becoming more widespread in the next few years. In fact, there are already a lot of AR features that we can find in our smartphones, for example snapchat, pokemon go. 
+						</p>
+						<p>
+							In the future, it is possible that we may even have eye wears that will allow us to experience an augmented reality 24 hours a day, without needing to use our phones as an intermediary. 
+							Objects like the knickknacks in this project could become more widespread as it would be incredibly easy and relatively cheaper to produce them physically. Knickknacks like this could be used as souvenirs and may be implemented such that we would not need to buy a cube every time.
+							Instead, we could just buy the code that creates the scene, or a registration to allow you to download it and load it into an existing cube. It could even be possible for these models to not just show the local time and weather in text but allow the models to reflect them accordingly as well. 
+							For example, the direction of light changes at different time of the day, or the model showing rain or snow.
+							Furthermore, it could be used for online shopping. By providing a code or image that can be scanned, we could see the item we want to buy, allowing us to “try it on” and see the real size of the items. Another possibility of using this technology is on promotional posters. 
+							For example, a poster for a movie could play the trailer when a user interacts with it, or a song could play if it was a poster for a concert. 
+						</p>
+						<p>
+							However, this might also become a problem if, for example, these promotional contents are triggered the moment you interact with them and you are not allowed to stop or skip it like Youtube ads. 
+							It could also be potentially dangerous if these ads make models appear in the eye wear, blocking your sight, or the music being played too loud while the user is outside. Building off that, this would also mean that AR could potentially be used as a weapon. 
+							By using physical items that will forcibly interact with the user’s eye wear, it will allow someone to distract them, even if momentarily, and attack them.
+						</p>
+
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+						<li><a href="https://www.linkedin.com/in/ming-yu-liew/" class="icon brands fa-linkedin"><span class="label">Github</span></a></li>
+						<li><a href="https://github.com/mliew2" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<!--<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>-->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
