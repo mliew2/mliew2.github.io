@@ -87,6 +87,13 @@ function q1_barchart(unit_no, vehicle_types, vehicle_type_unit_no_count) {
         .call(g => g.select(".domain").remove())
         .attr("transform", `translate(${margin.left}, ${size.height})`);
     
+    xAxisGroup.append("text")
+        .attr("x", size.width / 2)
+        .attr("y", 40)
+        .attr("fill", "black")
+        .attr("text-anchor", "middle")
+        .text("UNIT_NO");
+
     let barsGroup = g.append("g");
 
     function update(data) {
@@ -114,6 +121,7 @@ function q1_barchart(unit_no, vehicle_types, vehicle_type_unit_no_count) {
             .attr("width", x.bandwidth())
             .attr("x", ([no, count]) => x(no)+margin.left)
             .attr("y", ([no, count]) => y(count))
+            .attr("opacity", 1)
         .transition(t)
             .attr("height", ([no, count]) => size.height-y(count));
   }
@@ -419,6 +427,13 @@ function q4_barchart(injury_type_array, raw_crashes_array) {
         // remove baseline from the axis
         .call(g => g.select(".domain").remove())
         .attr("transform", `translate(${margin.left}, ${size.height})`);
+
+    xAxisGroup.append("text")
+        .attr("x", size.width / 2)
+        .attr("y", 40)
+        .attr("fill", "black")
+        .attr("text-anchor", "middle")
+        .text("Injury Reported");
       
     let barsGroup = g.append("g");
   
@@ -448,6 +463,7 @@ function q4_barchart(injury_type_array, raw_crashes_array) {
           .attr("width", x.bandwidth())
           .attr("x", ([type, count]) => x(type)+margin.left)
           .attr("y", ([type, count]) => y(count))
+          .attr("opacity", 1)
         .transition(t)
           .attr("height", ([type, count]) => size.height-y(count));
     }
@@ -537,10 +553,10 @@ function q3_q4_linked(raw_crashes, raw_crashes_vehicles, raw_crashes_array) {
     q4_bar.update(q3_scatter.value);
 }
 
-function q5_barchart(month_array, month_count, day_array, day_count, date_Array) {
+function q5_barchart(month_array, month_count, day_array, date_Array) {
     // set up
     
-    const q6_bar = q6_barchart(day_array, day_count, date_Array);
+    const q6_bar = q6_barchart(day_array, date_Array);
     q6_bar.update(month_array[0]);
 
     const margin = {top: 50, right: 50, bottom: 50, left: 50};
@@ -590,6 +606,13 @@ function q5_barchart(month_array, month_count, day_array, day_count, date_Array)
         // remove baseline from the axis
         .call(g => g.select(".domain").remove())
         .attr("transform", `translate(${margin.left}, ${size.height})`);
+    
+    xAxisGroup.append("text")
+        .attr("x", size.width / 2)
+        .attr("y", 40)
+        .attr("fill", "black")
+        .attr("text-anchor", "middle")
+        .text("Month");
       
     var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip-donut")
@@ -606,6 +629,7 @@ function q5_barchart(month_array, month_count, day_array, day_count, date_Array)
             .attr("height", ([month, count]) => size.height-y(count))
             .attr("x", ([month, count]) => x(month)+margin.left)
             .attr("y", ([month, count]) => y(count))
+            .attr("plot", "q5")
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .transition()
@@ -629,6 +653,9 @@ function q5_barchart(month_array, month_count, day_array, day_count, date_Array)
         })
         .on('click', function (d, i) {
             d3.selectAll('rect')
+            .filter(function() {
+                return d3.select(this).attr("plot") == "q5";
+            })
                 .transition()
                 .duration('50')
                 .attr("selected", false)
@@ -636,15 +663,17 @@ function q5_barchart(month_array, month_count, day_array, day_count, date_Array)
             d3.select(this)
                 .transition()
                 .duration('50')
-                .attr('selected', !(this.getAttribute('selected') === 'true'));
+                .attr('selected', true);
             q6_bar.update(i[0], date_Array);
         });
 
     return Object.assign(svg.node());
 }
 
-function q6_barchart(day_array, day_count, date_Array) {
+function q6_barchart(day_array, date_Array) {
     // set up
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
     const margin = {top: 50, right: 50, bottom: 50, left: 50};
     
@@ -659,6 +688,12 @@ function q6_barchart(day_array, day_count, date_Array) {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
   
     const day_color = d3.scaleOrdinal().domain(day_array).range(d3.schemeCategory10);
+
+    g.append("text")
+        .attr("x", ((size.width + margin.left + margin.right) / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("label", "title")
+        
     
     // create scales
     const y = d3.scaleLinear()
@@ -689,6 +724,13 @@ function q6_barchart(day_array, day_count, date_Array) {
         // remove baseline from the axis
         .call(g => g.select(".domain").remove())
         .attr("transform", `translate(${margin.left}, ${size.height})`);
+
+    xAxisGroup.append("text")
+        .attr("x", size.width / 2)
+        .attr("y", 40)
+        .attr("fill", "black")
+        .attr("text-anchor", "middle")
+        .text("Day");
       
     let barsGroup = g.append("g");
 
@@ -724,14 +766,15 @@ function q6_barchart(day_array, day_count, date_Array) {
           .attr("y", ([type, count]) => y(count))
           .attr("opacity", 1)
         .on('mouseover', function (d, i) {
+            const temp = new Date(`${i[0]} ${month} 2022`);
             d3.select(this)
                 .transition()
                 .duration('50')
-                .attr('opacity', 1);
+                .attr('opacity', 0.75);
             tooltip.transition()
                 .duration(50)
                 .style("opacity", 1);
-            tooltip.html(`Total: ${i[1]}`)
+            tooltip.html(`${days[temp.getDay()]}, Total: ${i[1]}`)
                 .style("left", ()=>{return (d.pageX + 10) + "px"})
                 .style("top", (d.pageY - 15) + "px");
         })
@@ -739,13 +782,19 @@ function q6_barchart(day_array, day_count, date_Array) {
             d3.select(this)
                 .transition()
                 .duration('50')
-                .attr('opacity', 0.75);
+                .attr('opacity', 1);
             tooltip.transition()
                 .duration(50)
                 .style("opacity", 0);
         })
         .transition(t)
             .attr("height", ([type, count]) => size.height-y(count));
+
+        svg.selectAll("text")
+            .filter(function() {
+                return d3.select(this).attr("label") == "title";
+            })
+            .text(month);
     }
     
     return Object.assign(svg.node(), { update });
@@ -755,6 +804,7 @@ function get_day_count(month, date_Array) {
     const months = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
     ];
+
     const month_num_days = new Map([
         ["January", 31],
         ["February", 28],
@@ -769,6 +819,7 @@ function get_day_count(month, date_Array) {
         ["November", 30],
         ["December", 31],
     ]);
+
     const day_array = Array.from({length: month_num_days.get(month)}, (_, i) => i + 1);
     const day_count = new Map();
     day_array.map(day => {
@@ -794,32 +845,31 @@ function q5_q6_linked(raw_crashes_vehicles) {
         date_Array.push(new Date(crash.CRASH_DATE));
     });
 
-    const month_array = ["March", "April", "May", "June", "July", "August", "September"];
+    const month_array = [];
 
     const month_count = new Map();
-    month_array.map(month => {
-        month_count.set(month, 0);
-    });
 
+    // We use 31 here because it is the maximum amount in a month
+    // It is only used to create a color scheme for each day will be changed later on when the visualization changes
     const day_array = Array.from({length: 31}, (_, i) => i + 1);
-    const day_count = new Map();
-    day_array.map(day => {
-        day_count.set(day, 0);
-    });
 
     date_Array.map(date => {
-        month_count[month_count.set(months[date.getMonth()], month_count.get(months[date.getMonth()])+1)];
-        if(months[date.getMonth()] == month_array[0]) {
-            day_count[day_count.set(date.getDate(), day_count.get(date.getDate())+1)];
+        if(!month_array.includes(months[date.getMonth()])) {
+            month_array.push(months[date.getMonth()]);
+        }
+        if(month_count.has(months[date.getMonth()])) {
+            month_count[month_count.set(months[date.getMonth()], month_count.get(months[date.getMonth()])+1)];
+        } else {
+            month_count[month_count.set(months[date.getMonth()], 1)];
         }
     });
 
-    const q5_bar = q5_barchart(month_array, month_count, day_array, day_count, date_Array);
+    const q5_bar = q5_barchart(month_array, month_count, day_array, date_Array);
 }
 
 function createMap(crashes_points) {
 
-    var map = L.map('map').setView([41.9, -87.7], 11);
+    var map = L.map('map').setView([41.87, -87.7], 11);
 
     var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
